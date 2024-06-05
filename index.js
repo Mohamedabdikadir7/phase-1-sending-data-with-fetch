@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded' ,function(){
     getMovies()
     })
     // now we fetch the api 
-    // the api below we willl be getting from the json file
+    // the api below we will be getting from the json file that we have
     function getMovies() {
         fetch ('http://localhost:3000/movies')
         .then (res => res.json())
@@ -12,12 +12,13 @@ document.addEventListener('DOMContentLoaded' ,function(){
         }
             
         )}
-// see movie function here we are getting the movie
+// // seeMovie Create and display a movie card for each movie object
 function seeMovie(movie){
    // console.log(movie)
     let row = document.getElementById("card");
     let div = document.createElement("div");
     div.classList.add('col-3')
+    //Set the inner HTML of the div to the movie card structure, using movie data
     div.innerHTML = `<div class="card">
     <img class="card-img-top" src="${movie.Poster}" alt="Card image cap">
     <div class="card-body">
@@ -26,7 +27,7 @@ function seeMovie(movie){
       <a href="#" class="btn btn-primary">watch</a>
     </div>
   </div>`
-
+// Append the new div (movie card) to the row element
   row.appendChild(div)
 }
 
