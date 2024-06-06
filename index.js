@@ -30,6 +30,16 @@ function seeMovie(movie){
 // Append the new div (movie card) to the row element
   row.appendChild(div)
 }
+document.getElementById('searchButton').addEventListener('click', function() {
+    // Get the search input value
+    let searchTitle = document.getElementById('searchTitle').value.toLowerCase();
+
+    // Clear previous search results
+   // document.getElementById('card').innerHTML = '';
+
+    // Search and display movies matching the search title
+    movies.filter(movie => movie.Title.toLowerCase().includes(searchTitle)).forEach(seeMovie);
+});
 
 // function getMovies() {
 // fetch ('http://localhost:3000/movies')
